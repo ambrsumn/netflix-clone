@@ -3,6 +3,7 @@ import { LOGO_URL } from '../../constants/config';
 import { movieService } from '../../services/movieService.service';
 import { SafePipe } from '../../pipes/safe.pipe';
 import { Block } from '@angular/compiler';
+// import { BannerMovieDetailComponent } from '../../modals/banner-movie-detail/banner-movie-detail.component';}
 
 @Component({
   selector: 'app-home',
@@ -18,8 +19,12 @@ export class HomeComponent implements OnInit {
   movieOnBannerId: any;
   movieOnBanner: any;
   movieOnBannerLink: string = 'https://www.youtube.com/embed/';
+  movieOnBannerLinkModal: string = 'https://www.youtube.com/embed/';
   movieOnBannerTitle: any;
   movieOnBannerInfo: any;
+  openModalVariable: boolean = false;
+
+  movieDetailArray: string[] = [];
 
   constructor(private movieService: movieService) {}
 
@@ -34,7 +39,9 @@ export class HomeComponent implements OnInit {
       this.movieOnBannerTitle = res.results[temp].title;
       this.movieOnBannerInfo = res.results[temp].overview;
 
-      console.log(this.movieOnBannerTitle);
+      // console.log(this.movieOnBannerTitle);
+      this.movieDetailArray.push(this.movieOnBannerTitle);
+      this.movieDetailArray.push(this.movieOnBannerInfo);
     });
 
     await this.movieService
@@ -46,7 +53,12 @@ export class HomeComponent implements OnInit {
           this.movieOnBanner.toString(),
           `?autoplay=1&mute=1`
         );
-        console.log(this.movieOnBannerLink);
+        this.movieOnBannerLinkModal = this.movieOnBannerLinkModal.concat(
+          this.movieOnBanner.toString()
+        );
+
+        this.movieDetailArray.push(this.movieOnBannerLinkModal);
+        // console.log(this.movieOnBannerLink);
       });
 
     await this.movieService.getMovie('popular').subscribe((res: any) => {
@@ -70,20 +82,10 @@ export class HomeComponent implements OnInit {
   }
 
   openModal() {
-    let element = document.getElementById('modal');
-
-    if (element != null) {
-      element.style.display = 'block';
-      element.style.opacity = '1';
-    }
+    this.openModalVariable = true;
   }
 
   closeModal() {
-    let element = document.getElementById('modal');
-
-    if (element != null) {
-      element.style.display = 'none';
-      // element.style.opacity = '1';
-    }
+    this.openModalVariable = false;
   }
 }

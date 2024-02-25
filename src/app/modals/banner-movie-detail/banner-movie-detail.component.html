@@ -1,0 +1,40 @@
+<div
+  style="
+    width: 60%;
+    height: 80vh;
+    background-color: black;
+    opacity: 1;
+    position: relative;
+    margin: auto;
+    overflow: auto;
+    overflow-y: scroll;
+    padding: 1rem;
+  "
+>
+  <div class="banner">
+    <iframe
+      class="player"
+      [src]="detailArray[2] | safe"
+      allowfullscreen
+    ></iframe>
+
+    <h1
+      style="
+        position: absolute;
+        left: 0;
+        color: white;
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+      "
+    >
+      {{ detailArray[0] }}
+    </h1>
+
+    <h2 style="color: white; font-size: 1rem; margin-top: 4rem">
+      {{ detailArray[1] }}
+    </h2>
+
+    <button class="btn">Close</button>
+  </div>
+</div>

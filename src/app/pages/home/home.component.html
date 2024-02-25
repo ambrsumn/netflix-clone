@@ -15,6 +15,7 @@
 
   <div class="banner">
     <iframe
+      (click)="closeModal()"
       class="player"
       [src]="movieOnBannerLink | safe"
       allowfullscreen
@@ -51,55 +52,7 @@
   </div>
 </div>
 
-<!-- Modal for Banner -->
-
-<div
-  class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-  id="modal"
-  style="
-    display: none;
-    color: white;
-    width: 70%;
-    margin: auto;
-    background-color: black;
-  "
->
-  <div class="banner">
-    <iframe
-      class="player"
-      [src]="movieOnBannerLink | safe"
-      allowfullscreen
-    ></iframe>
-
-    <h1
-      style="
-        position: absolute;
-        z-index: 19;
-        bottom: 10rem;
-        left: 0;
-        color: white;
-        font-size: 5rem;
-        margin-left: 1.2rem;
-        font-weight: bold;
-      "
-    >
-      {{ movieOnBannerTitle }}
-    </h1>
-
-    <div
-      class="buttons"
-      style="
-        position: absolute;
-        z-index: 19;
-        bottom: 5rem;
-        left: 0;
-        display: flex;
-      "
-    >
-      <button class="btn">Play</button>
-    </div>
-  </div>
-  <button style="color: white; border: 1px solid black" (click)="closeModal()">
-    Close Modal
-  </button>
-</div>
+<app-banner-movie-detail
+  *ngIf="openModalVariable"
+  [detailArray]="movieDetailArray"
+></app-banner-movie-detail>

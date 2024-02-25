@@ -1,0 +1,25 @@
+.banner {
+  border: 1px solid black;
+  height: 40vh;
+  width: 100%;
+  position: relative;
+  /* background-color: yellow; */
+}
+
+.player {
+  width: 100%;
+  height: 60vh;
+}
+.btn {
+  color: white;
+  border: 2px solid red;
+  border-radius: 5px;
+  /* width: 25%; */
+  height: 2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: rgb(255, 255, 255, 0.2);
+  /* margin-left: 1.5rem; */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}

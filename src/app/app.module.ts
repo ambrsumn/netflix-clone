@@ -12,6 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SafePipe } from './pipes/safe.pipe';
+import { BannerMovieDetailComponent } from './modals/banner-movie-detail/banner-movie-detail.component';
 
 // const routes: Routes = [
 //   { path: '', component: AuthenticationComponent },
@@ -25,6 +26,7 @@ import { SafePipe } from './pipes/safe.pipe';
     AuthenticationComponent,
     HomeComponent,
     SafePipe,
+    BannerMovieDetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [provideClientHydration()],
