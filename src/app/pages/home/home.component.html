@@ -1,0 +1,105 @@
+<div class="main">
+  <div
+    class="bg-transparent h-[10vh]"
+    style="display: flex; z-index: 9; position: relative"
+  >
+    <img [src]="logoImage" alt="logo" class="w-[8rem]" />
+    <ul class="footerLinks">
+      <li><a href="#" style="color: white; font-weight: bold">Home</a></li>
+      <li><a href="#">TV Shows</a></li>
+      <li><a href="#">Movies</a></li>
+      <li><a href="#">Popular</a></li>
+      <li><a href="#">My List</a></li>
+    </ul>
+  </div>
+
+  <div class="banner">
+    <iframe
+      class="player"
+      [src]="movieOnBannerLink | safe"
+      allowfullscreen
+    ></iframe>
+
+    <h1
+      style="
+        position: absolute;
+        z-index: 19;
+        bottom: 10rem;
+        left: 0;
+        color: white;
+        font-size: 5rem;
+        margin-left: 1.2rem;
+        font-weight: bold;
+      "
+    >
+      {{ movieOnBannerTitle }}
+    </h1>
+
+    <div
+      class="buttons"
+      style="
+        position: absolute;
+        z-index: 19;
+        bottom: 5rem;
+        left: 0;
+        display: flex;
+      "
+    >
+      <button class="btn">Play Now 👁️</button>
+      <button class="btn" (click)="openModal()">Info ℹ️</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Banner -->
+
+<div
+  class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+  id="modal"
+  style="
+    display: none;
+    color: white;
+    width: 70%;
+    margin: auto;
+    background-color: black;
+  "
+>
+  <div class="banner">
+    <iframe
+      class="player"
+      [src]="movieOnBannerLink | safe"
+      allowfullscreen
+    ></iframe>
+
+    <h1
+      style="
+        position: absolute;
+        z-index: 19;
+        bottom: 10rem;
+        left: 0;
+        color: white;
+        font-size: 5rem;
+        margin-left: 1.2rem;
+        font-weight: bold;
+      "
+    >
+      {{ movieOnBannerTitle }}
+    </h1>
+
+    <div
+      class="buttons"
+      style="
+        position: absolute;
+        z-index: 19;
+        bottom: 5rem;
+        left: 0;
+        display: flex;
+      "
+    >
+      <button class="btn">Play</button>
+    </div>
+  </div>
+  <button style="color: white; border: 1px solid black" (click)="closeModal()">
+    Close Modal
+  </button>
+</div>

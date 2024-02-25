@@ -1,0 +1,39 @@
+.footerLinks li {
+  display: inline-block;
+  color: whitesmoke;
+  margin-top: 1rem;
+  width: 10%;
+}
+
+.footerLinks {
+  margin-left: 3rem;
+  width: 60%;
+}
+
+.banner {
+  border: 1px solid black;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  /* background-color: yellow; */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.player {
+  width: 100%;
+  height: 100vh;
+}
+
+.btn {
+  color: white;
+  border: 2px solid red;
+  border-radius: 5px;
+  /* width: 25%; */
+  height: 2.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: rgb(255, 255, 255, 0.2);
+  margin-left: 1.5rem;
+}

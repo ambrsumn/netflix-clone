@@ -1,0 +1,17 @@
+.blueText {
+  color: blue;
+}
+
+.footerLinks {
+  width: 80%;
+}
+
+.footerLinks li {
+  width: 25%;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.footerLinks li:hover {
+  text-decoration: underline;
+}
